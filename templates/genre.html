@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block body %}
+    <h2>Все книги{{name_book }}</h2>
+    {%- for book in book %}
+        <ul>
+            <li>Наименование книги: {{book.name_book}}</li>
+            <li>Добавлен: {{book.added}}</li>
+
+        </ul>
+        <hr>
+
+    {%- endfor %}
+{% endblock %}
