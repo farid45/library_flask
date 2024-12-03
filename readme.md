@@ -84,3 +84,8 @@ pip3 install -r requirements.txt
 ```
 SQLALCHEMY_DATABASE_URI="sqlite:///project.db" python ./app.py
 ```
+
+### Запускаем браузер и вставляем следующую ссылку:
+```
+http://127.0.0.1:5000
+```
