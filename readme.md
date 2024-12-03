@@ -51,7 +51,7 @@ brew install macfuse openssl
 
 #### Grab файлы 
 ```
-git https://github.com/farid45/library_flask.git
+git clone https://github.com/farid45/library_flask.git
 cd library_flask
 ```
 
