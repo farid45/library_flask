@@ -51,8 +51,8 @@ brew install macfuse openssl
 
 #### Grab файлы 
 ```
-git ...
-cd ...
+git https://github.com/farid45/library_flask.git
+cd library_flask
 ```
 
 #### Создать venv и установить зависимости
