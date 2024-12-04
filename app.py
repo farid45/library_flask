@@ -1,6 +1,7 @@
 import os
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for
+from werkzeug.utils import redirect
 
 from database import db, Book, Genre
 
@@ -28,7 +29,19 @@ def genre(genre_id):
                            books_name = all_genre.book,
                            book=all_genre.book)
 
+@app.route('/update_book/<int:book_id>', methods=['POST'])
+def update_book(book_id):
+    book = Book.query.get_or_404(book_id)
+    print(request.form)
 
+    is_read = request.form.get('is_read')
+    if is_read:
+        book.is_read = True
+    else:
+        book.is_read = False
+
+    db.session.commit()
+    return redirect(url_for('all_book'))
 
 
 if __name__ == '__main__':

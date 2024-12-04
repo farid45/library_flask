@@ -1,21 +1,30 @@
 {% extends "layout.html" %}
 {% block body %}
+{%- macro ternary(value, yes, no) -%}
+    {%- if value -%}
+        {{ yes }}
+    {% else -%}
+        {{ no }}
+    {% endif -%}
+{%- endmacro -%}
     <h2>Все книги</h2>
     {%- for book in book %}
             <ul>
                 <li>Наименование книги: {{book.name_book}}</li>
                 <li>Добавлен: {{book.added}}</li>
                 <li><a href={{url_for('genre', genre_id=book.genre_id)}}>Жанр: {{book.genre}} </a></li>
-                <li>Книга прочитана?:{{book.is_read}}</li>
-                <form>
-                    <label>
-                        <input type="checkbox">
-                        Прочитана:
-                    </label>
+
+                <li>Книга прочитана?:{{ ternary(book.is_read, 'да', 'нет') }}
+
+</li>
+                <form action="/update_book/{{book.id}}" method="POST">
+                        <input type="checkbox" id="read-{{book.id}}" name="is_read"
+                        {% if book.is_read %}checked{% endif %}>
+
+                    <label for="read-{{book.id}}">Прочитано</label>
+                    <button type="submit">Сохранить</button>
                 </form>
-            <button type="button" name="popup-button">Сохранить!</button>
         </ul>
         <hr>
     {%- endfor %}
-
 {% endblock %}
