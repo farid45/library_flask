@@ -22,20 +22,20 @@
 
 #### Для Debian/Ubuntu
 ```
-sudo apt install python3 git libusb-1.0-0 python3-pip libfuse2
+sudo apt install python3 git python3-pip
 ```
 #### Для ArchLinux
 ```
-(sudo) pacman -S  python python-pip git libusb fuse2
+(sudo) pacman -S  python python-pip git
 ```
 или
 ```
-yay -S python python-pip git libusb fuse2
+yay -S python python-pip git
 ```
 
 #### Для Fedora
 ```
-sudo dnf install python3 git libusb1 fuse
+sudo dnf install python3 git
 ```
 
 ### macOS
@@ -44,7 +44,6 @@ sudo dnf install python3 git libusb1 fuse
 
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew install macfuse openssl
 ```
 
 
@@ -73,8 +72,8 @@ pip3 install -r requirements.txt
 
 #### Grab файлы и установка
 ```
-git clone https://github.com/bkerler/mtkclient
-cd mtkclient
+git clone https://github.com/farid45/library_flask.git
+cd library_flask
 pip3 install -r requirements.txt
 ```
 
